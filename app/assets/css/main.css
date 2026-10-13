@@ -1,0 +1,16 @@
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--color-surface);
+  color: var(--color-text-primary);
+  font-family: var(--font-family-sans);
+  font-size: var(--text-body-size);
+  line-height: var(--text-body-line-height);
+}
+
+h1, h2, h3 {
+  font-family: var(--text-heading-family);
+  line-height: var(--text-heading-line-height);
+  color: var(--color-text-brand);
+}
