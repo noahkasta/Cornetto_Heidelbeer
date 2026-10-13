@@ -1,0 +1,64 @@
+{
+  "conference": {
+    "name": "FrontendNow",
+    "tagline": "Zwei Tage Web-Frontend, ohne Buzzword-Bingo",
+    "dates": ["2026-09-15", "2026-09-16"],
+    "location": "Wien",
+    "timezone": "Europe/Vienna"
+  },
+  "tracks": [
+    { "id": "frontend-architecture", "name": "Frontend Architecture & Patterns" },
+    { "id": "rendering-performance", "name": "Rendering & Performance" },
+    { "id": "ai-dx", "name": "AI & Developer Experience" },
+    { "id": "design-systems", "name": "Design Systems & UX" },
+    { "id": "keynote", "name": "Keynotes & Podium" }
+  ],
+  "rooms": [
+    { "id": "main-hall", "name": "Hauptsaal", "capacity": 400 },
+    { "id": "room-a", "name": "Saal A", "capacity": 120 },
+    { "id": "room-b", "name": "Saal B", "capacity": 120 },
+    { "id": "room-c", "name": "Saal C", "capacity": 80 }
+  ],
+  "speakers": [
+    { "id": "sp01", "name": "Mara Lindqvist", "title": "CTO", "company": "Nova Systems", "bio": "Verantwortet die Frontend-Plattform bei Nova Systems und spricht regelmäßig über Architekturentscheidungen in großen Teams.", "sessionIds": ["s01", "s20"] },
+    { "id": "sp02", "name": "Jonas Ahrend", "title": "Senior Frontend Architect", "company": "Pixelwerk", "bio": "Baut seit zehn Jahren Komponentenbibliotheken und ist überzeugter Verfechter von Headless-Patterns.", "sessionIds": ["s02"] },
+    { "id": "sp03", "name": "Elena Voss", "title": "Design Systems Lead", "company": "Studio Hallo", "bio": "Verbindet Design und Code über Design-Tokens-Pipelines für Agentur-Kunden.", "sessionIds": ["s03"] },
+    { "id": "sp04", "name": "Tomas Krüger", "title": "Freelance Consultant", "company": "selbstständig", "bio": "Berät Firmen bei Rendering-Strategie-Entscheidungen und Migrationen.", "sessionIds": ["s04"] },
+    { "id": "sp05", "name": "Priya Nandakumar", "title": "AI Tooling Engineer", "company": "CloudNine Labs", "bio": "Entwickelt interne AI-Coding-Assistenten und beschäftigt sich mit deren Qualitätssicherung.", "sessionIds": ["s05", "s20"] },
+    { "id": "sp06", "name": "Felix Brandt", "title": "Staff Engineer", "company": "Nova Systems", "bio": "Fokus auf State-Management-Architekturen in großen Vue- und React-Codebasen.", "sessionIds": ["s06"] },
+    { "id": "sp07", "name": "Sara Lindholm", "title": "PWA Specialist", "company": "offline-first.dev", "bio": "Schreibt und spricht über Offline-First-Architekturen und Service Worker.", "sessionIds": ["s07", "s17"] },
+    { "id": "sp08", "name": "Daniel Osei", "title": "Prompt Engineering Coach", "company": "selbstständig", "bio": "Trainiert Entwicklungsteams im effektiven Einsatz von AI-Coding-Assistenten.", "sessionIds": ["s08"] },
+    { "id": "sp09", "name": "Nina Falkenberg", "title": "UX Engineer", "company": "Studio Hallo", "bio": "Gestaltet und implementiert Theme-Systeme für Enterprise-Kunden.", "sessionIds": ["s09"] },
+    { "id": "sp10", "name": "Louis Meyer", "title": "Performance Engineer", "company": "CloudNine Labs", "bio": "Misst und optimiert Ladezeiten großer Content-Websites.", "sessionIds": ["s10"] },
+    { "id": "sp11", "name": "Amara Diallo", "title": "Head of Engineering", "company": "Vela Digital", "bio": "Führt ein 40-köpfiges Frontend-Team und etabliert dort verantwortungsvolle AI-Workflows.", "sessionIds": ["s11", "s20"] },
+    { "id": "sp12", "name": "Kenji Watanabe", "title": "Open-Source Maintainer", "company": "selbstständig", "bio": "Pflegt mehrere populäre Vue-Composable-Bibliotheken.", "sessionIds": ["s12"] },
+    { "id": "sp13", "name": "Isabel Roth", "title": "Design Ops Lead", "company": "Studio Hallo", "bio": "Baut die Brücke zwischen Figma und Produktionscode für mehrere Design-Teams.", "sessionIds": ["s13"] },
+    { "id": "sp14", "name": "Peter Lindgren", "title": "Platform Engineer", "company": "Nova Systems", "bio": "Betreibt die Build- und Deployment-Pipeline für mehrere Content-Plattformen.", "sessionIds": ["s14"] },
+    { "id": "sp15", "name": "Julia Baumgartner", "title": "Developer Experience Lead", "company": "Vela Digital", "bio": "Verantwortet Linter- und CI-Standards für alle Frontend-Repositories.", "sessionIds": ["s15"] },
+    { "id": "sp16", "name": "Robin Achterberg", "title": "Accessibility Consultant", "company": "selbstständig", "bio": "Prüft und schult Teams zu barrierefreien Web-Oberflächen.", "sessionIds": ["s16"] },
+    { "id": "sp17", "name": "Hana Kovac", "title": "Engineering Manager", "company": "CloudNine Labs", "bio": "Nutzt DORA-Metriken zur Steuerung mehrerer Frontend-Teams.", "sessionIds": ["s18"] },
+    { "id": "sp18", "name": "Malik Osei", "title": "Principal Engineer", "company": "Pixelwerk", "bio": "Verantwortet die Ordner- und Modulstruktur mehrerer Millionen-Zeilen-Frontends.", "sessionIds": ["s19", "s20"] }
+  ],
+  "sessions": [
+    { "id": "s01", "title": "Die Zukunft der Web-Frontends: Trends 2026+", "abstract": "Ein Überblick über die Entwicklungen, die Frontend-Teams in den nächsten Jahren wirklich betreffen werden — jenseits des Hypes.", "trackId": "keynote", "speakerIds": ["sp01"], "day": "2026-09-15", "startTime": "09:00", "endTime": "09:45", "roomId": "main-hall", "level": "Einsteiger", "format": "Vortrag" },
+    { "id": "s02", "title": "Headless Components in der Praxis", "abstract": "Wie man Logik und Darstellung sauber trennt — mit Beispielen aus echten Komponentenbibliotheken.", "trackId": "frontend-architecture", "speakerIds": ["sp02"], "day": "2026-09-15", "startTime": "10:15", "endTime": "11:00", "roomId": "room-a", "level": "Fortgeschritten", "format": "Vortrag" },
+    { "id": "s03", "title": "Design Tokens: Eine Sprache für Design und Code", "abstract": "Wie Design Tokens Design-Tools und Codebasis synchron halten, inklusive Theme-Switching und Dark Mode.", "trackId": "design-systems", "speakerIds": ["sp03"], "day": "2026-09-15", "startTime": "10:15", "endTime": "11:00", "roomId": "room-b", "level": "Einsteiger", "format": "Vortrag" },
+    { "id": "s04", "title": "CSR vs. SSR vs. SSG: Die richtige Strategie wählen", "abstract": "Ein Entscheidungsrahmen für Rendering-Strategien anhand konkreter Use Cases.", "trackId": "rendering-performance", "speakerIds": ["sp04"], "day": "2026-09-15", "startTime": "10:15", "endTime": "11:00", "roomId": "room-c", "level": "Fortgeschritten", "format": "Vortrag" },
+    { "id": "s05", "title": "Clean Code im Zeitalter von AI-Assistenten", "abstract": "Warum Clean-Code-Prinzipien bei AI-generiertem Code wichtiger werden, nicht unwichtiger.", "trackId": "ai-dx", "speakerIds": ["sp05"], "day": "2026-09-15", "startTime": "11:15", "endTime": "12:00", "roomId": "room-a", "level": "Fortgeschritten", "format": "Vortrag" },
+    { "id": "s06", "title": "State Management ohne Overengineering", "abstract": "Wann reicht ref()/reactive(), wann braucht es wirklich eine State-Management-Library?", "trackId": "frontend-architecture", "speakerIds": ["sp06"], "day": "2026-09-15", "startTime": "11:15", "endTime": "12:00", "roomId": "room-b", "level": "Fortgeschritten", "format": "Vortrag" },
+    { "id": "s07", "title": "Offline-First: Service Worker Grundlagen", "abstract": "Vom install-Event bis zur Caching-Strategie — Service Worker Schritt für Schritt.", "trackId": "rendering-performance", "speakerIds": ["sp07"], "day": "2026-09-15", "startTime": "11:15", "endTime": "12:00", "roomId": "room-c", "level": "Einsteiger", "format": "Workshop" },
+    { "id": "s08", "title": "Prompt Engineering für Frontend-Teams", "abstract": "Konkrete Prompt-Muster für Refactoring, Test-Generierung und Code-Review-Vorbereitung.", "trackId": "ai-dx", "speakerIds": ["sp08"], "day": "2026-09-15", "startTime": "13:30", "endTime": "14:15", "roomId": "room-a", "level": "Einsteiger", "format": "Workshop" },
+    { "id": "s09", "title": "Dark Mode richtig umsetzen", "abstract": "Mehr als ein Farb-Swap: Kontraste, Bilder, Elevation und Testing für Dark Mode.", "trackId": "design-systems", "speakerIds": ["sp09"], "day": "2026-09-15", "startTime": "13:30", "endTime": "14:15", "roomId": "room-b", "level": "Fortgeschritten", "format": "Vortrag" },
+    { "id": "s10", "title": "Partial Hydration: Weniger JavaScript, mehr Performance", "abstract": "Wie Islands-Architekturen und Partial Hydration die an den Client gesendete JS-Menge reduzieren.", "trackId": "rendering-performance", "speakerIds": ["sp10"], "day": "2026-09-15", "startTime": "13:30", "endTime": "14:15", "roomId": "room-c", "level": "Experte", "format": "Vortrag" },
+    { "id": "s11", "title": "Vertrauen in AI-generierten Code: Wie Teams Qualität sichern", "abstract": "Welche Prozesse und Gates verhindern, dass AI-Code unkontrolliert in Produktion landet.", "trackId": "keynote", "speakerIds": ["sp11"], "day": "2026-09-16", "startTime": "09:00", "endTime": "09:45", "roomId": "main-hall", "level": "Einsteiger", "format": "Vortrag" },
+    { "id": "s12", "title": "Composable Patterns in Vue 3", "abstract": "Wiederverwendbare Logik mit der Composition API — Muster, die sich in der Praxis bewährt haben.", "trackId": "frontend-architecture", "speakerIds": ["sp12"], "day": "2026-09-16", "startTime": "10:15", "endTime": "11:00", "roomId": "room-a", "level": "Fortgeschritten", "format": "Vortrag" },
+    { "id": "s13", "title": "Von Figma zu Code: Automatisierte Design-Übergaben", "abstract": "Wie Design-Tool-Exporte und Token-Pipelines die Übergabe zwischen Design und Dev beschleunigen.", "trackId": "design-systems", "speakerIds": ["sp13"], "day": "2026-09-16", "startTime": "10:15", "endTime": "11:00", "roomId": "room-b", "level": "Fortgeschritten", "format": "Vortrag" },
+    { "id": "s14", "title": "Incremental Static Regeneration in der Praxis", "abstract": "Wie ISR statische Performance mit halbwegs aktuellen Daten kombiniert — inklusive Stolperfallen.", "trackId": "rendering-performance", "speakerIds": ["sp14"], "day": "2026-09-16", "startTime": "10:15", "endTime": "11:00", "roomId": "room-c", "level": "Fortgeschritten", "format": "Vortrag" },
+    { "id": "s15", "title": "Linter als Qualitäts-Gate in CI/CD", "abstract": "Wie ESLint/Biome-Regeln AI-generierten Code strukturiert vor dem Merge abfangen.", "trackId": "ai-dx", "speakerIds": ["sp15"], "day": "2026-09-16", "startTime": "11:15", "endTime": "12:00", "roomId": "room-a", "level": "Einsteiger", "format": "Vortrag" },
+    { "id": "s16", "title": "Barrierefreiheit ist kein Add-on", "abstract": "Wie man Accessibility von Anfang an mitdenkt, statt sie am Ende nachzurüsten.", "trackId": "design-systems", "speakerIds": ["sp16"], "day": "2026-09-16", "startTime": "11:15", "endTime": "12:00", "roomId": "room-b", "level": "Einsteiger", "format": "Workshop" },
+    { "id": "s17", "title": "Progressive Web Apps: Installierbar, offline, schnell", "abstract": "Vom Web App Manifest bis zur fertigen PWA — was wirklich nötig ist.", "trackId": "rendering-performance", "speakerIds": ["sp07"], "day": "2026-09-16", "startTime": "11:15", "endTime": "12:00", "roomId": "room-c", "level": "Fortgeschritten", "format": "Vortrag" },
+    { "id": "s18", "title": "DORA-Metriken für Frontend-Teams", "abstract": "Was Lead Time, Deployment Frequency, Change Failure Rate und MTTR für Frontend-Teams bedeuten.", "trackId": "ai-dx", "speakerIds": ["sp17"], "day": "2026-09-16", "startTime": "13:30", "endTime": "14:15", "roomId": "room-a", "level": "Fortgeschritten", "format": "Vortrag" },
+    { "id": "s19", "title": "Skalierbare Ordnerstrukturen für große Frontend-Projekte", "abstract": "Wie man Frontend-Repositories organisiert, die über Jahre und viele Teams hinweg wachsen.", "trackId": "frontend-architecture", "speakerIds": ["sp18"], "day": "2026-09-16", "startTime": "13:30", "endTime": "14:15", "roomId": "room-b", "level": "Experte", "format": "Vortrag" },
+    { "id": "s20", "title": "Wohin geht die Reise? Frontend-Trends von morgen", "abstract": "Abschlussrunde mit vier Speakern über das, was in den nächsten Jahren wirklich zählt.", "trackId": "keynote", "speakerIds": ["sp01", "sp05", "sp11", "sp18"], "day": "2026-09-16", "startTime": "14:30", "endTime": "15:15", "roomId": "main-hall", "level": "Einsteiger", "format": "Podium" }
+  ]
+}

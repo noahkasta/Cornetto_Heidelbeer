@@ -1,0 +1,116 @@
+/* ==========================================================================
+   Cornetto Heidelbeere – Design Tokens
+   Schicht 1: Primitive Tokens (Rohwerte, niemals direkt in Komponenten nutzen)
+   Schicht 2: Semantische Tokens (Verwendungszweck, nur diese in Komponenten)
+   Ein Theme-Wechsel (z. B. Dark Mode) ändert nur Schicht 2.
+   ========================================================================== */
+
+:root {
+  /* ------------------------------------------------------------------------
+     SCHICHT 1 – PRIMITIVE TOKENS
+     ------------------------------------------------------------------------ */
+
+  /* Farben */
+  --blueberry-500: #464196;
+  --ink-900: #1e1b3a;
+  --cream-50: #fff8ea;
+  --lavender-100: #eeebff;
+  --chartreuse-400: #c8f03c;
+  --waffle-300: #f2c27a;
+  --cyan-700: #0e7490;
+  --berry-600: #c2185b;
+  --muted-600: #5b5878;
+  --white: #ffffff;
+
+  /* Spacing-Skala (4px-Raster) */
+  --space-0: 0;
+  --space-1: 0.25rem; /*  4px */
+  --space-2: 0.5rem;  /*  8px */
+  --space-3: 0.75rem; /* 12px */
+  --space-4: 1rem;    /* 16px */
+  --space-5: 1.5rem;  /* 24px */
+  --space-6: 2rem;    /* 32px */
+  --space-7: 3rem;    /* 48px */
+  --space-8: 4rem;    /* 64px */
+  --space-9: 6rem;    /* 96px */
+
+  /* Typografie: Schriftfamilien (Platzhalter, Webfonts können später ersetzt werden) */
+  --font-family-sans: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-family-display: "Trebuchet MS", system-ui, sans-serif;
+  --font-family-mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+
+  /* Typografie: Größenskala (Verhältnis 1.25, Basis 16px) */
+  --font-size-100: 0.8rem;    /* ~13px */
+  --font-size-200: 1rem;      /*  16px, Fließtext */
+  --font-size-300: 1.25rem;   /*  20px */
+  --font-size-400: 1.563rem;  /*  25px */
+  --font-size-500: 1.953rem;  /*  31px */
+  --font-size-600: 2.441rem;  /*  39px */
+  --font-size-700: 3.052rem;  /*  49px */
+
+  /* Typografie: Gewichte und Zeilenhöhen */
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-bold: 700;
+  --line-height-tight: 1.2;
+  --line-height-normal: 1.5;
+
+  /* Form */
+  --radius-sm: 0.375rem;
+  --radius-md: 0.75rem;
+  --radius-lg: 1.5rem;
+  --radius-pill: 999px;
+
+  /* ------------------------------------------------------------------------
+     SCHICHT 2 – SEMANTISCHE TOKENS (Standard-Theme: hell)
+     Kontrastwerte (WCAG 2.1, berechnet) stehen jeweils im Kommentar.
+     ------------------------------------------------------------------------ */
+
+  /* Flächen */
+  --color-surface: var(--cream-50);
+  --color-surface-raised: var(--lavender-100);
+  --color-surface-inverse: var(--ink-900);
+
+  /* Text */
+  --color-text-primary: var(--ink-900);      /* auf surface 15,6:1 */
+  --color-text-secondary: var(--muted-600);  /* auf surface 6,4:1 */
+  --color-text-brand: var(--blueberry-500);  /* auf surface 8,1:1 */
+  --color-text-inverse: var(--cream-50);
+  --color-link: var(--cyan-700);             /* auf surface 5,1:1 */
+  --color-danger: var(--berry-600);          /* auf surface 5,6:1 */
+
+  /* Interaktive Elemente */
+  --color-primary: var(--blueberry-500);
+  --color-on-primary: var(--white);          /* 8,6:1 */
+  --color-accent: var(--chartreuse-400);     /* nur als Fläche, nie als Text auf surface (1,2:1) */
+  --color-on-accent: var(--ink-900);         /* 12,6:1 */
+  --color-highlight: var(--waffle-300);
+  --color-on-highlight: var(--ink-900);      /* 10,0:1 */
+
+  /* Linien und Fokus (UI-Elemente brauchen mindestens 3:1) */
+  --color-border: var(--muted-600);
+  --color-focus-ring: var(--blueberry-500);
+
+  /* Spacing, semantisch */
+  --spacing-component-gap: var(--space-3);
+  --spacing-card-padding: var(--space-5);
+  --spacing-section: var(--space-8);
+
+  /* Typografie, semantisch */
+  --text-body-size: var(--font-size-200);
+  --text-body-line-height: var(--line-height-normal);
+  --text-heading-family: var(--font-family-display);
+  --text-heading-line-height: var(--line-height-tight);
+  --text-small-size: var(--font-size-100);
+}
+
+/* ==========================================================================
+   Theme-Erweiterung (kommt später, nur Struktur vorbereitet):
+   Ein weiteres Theme überschreibt ausschließlich die semantischen Tokens
+   aus Schicht 2. Komponenten und primitive Tokens bleiben unverändert.
+
+   :root[data-theme="dark"] {
+     --color-surface: ...;
+     --color-text-primary: ...;
+   }
+   ========================================================================== */
