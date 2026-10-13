@@ -103,14 +103,3 @@
   --text-heading-line-height: var(--line-height-tight);
   --text-small-size: var(--font-size-100);
 }
-
-/* ==========================================================================
-   Theme-Erweiterung (kommt später, nur Struktur vorbereitet):
-   Ein weiteres Theme überschreibt ausschließlich die semantischen Tokens
-   aus Schicht 2. Komponenten und primitive Tokens bleiben unverändert.
-
-   :root[data-theme="dark"] {
-     --color-surface: ...;
-     --color-text-primary: ...;
-   }
-   ========================================================================== */
