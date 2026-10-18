@@ -6,7 +6,7 @@ Die App soll Sessions durchsuchen und filtern, Speaker-Profile zeigen und einen 
 
 ## Stand
 
-Schritt 1 (Planung und Architekturentscheidungen): Branding, Design Tokens, Architektur-ADRs, State-Konzept und lauffähiges Grundgerüst. Features wie Filter und "Mein Programm" folgen in den nächsten Schritten.
+Schritt 1 (Planung und Architekturentscheidungen): Branding, Design Tokens, Architektur-ADRs, State-Konzept und lauffähiges Grundgerüst. Features wie Filter und "Mein Programm" folgen in den nächsten Schritten. Wir haben das projekt gemeinsam aufgesetzt und während einer Discord Session zusammen erstellt, die Commit history bildet unsere gemeinsam erarbeiteten Inhalte ab.
 
 ## Voraussetzungen
 
@@ -50,7 +50,7 @@ app/
   assets/css/              Globale Styles
 ```
 
-Die Struktur folgt ADR 02. Komponenten stellen nur dar, Logik liegt in Composables.
+Die Struktur folgt ADR 02. Die Komponenten stellen nur dar, die Logik liegt in den Composables.
 
 ## Dokumentation (Schritt 1)
 
@@ -61,4 +61,4 @@ Die Struktur folgt ADR 02. Komponenten stellen nur dar, Logik liegt in Composabl
 
 ## Team
 
-Team Cornetto Heidelbeere: Vorname Nachname, Vorname Nachname
+Team Cornetto Heidelbeere: Leo Bürger, Noah Franke
