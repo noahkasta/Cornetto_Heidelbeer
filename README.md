@@ -61,4 +61,6 @@ Die Struktur folgt ADR 02. Die Komponenten stellen nur dar, die Logik liegt in d
 
 ## Team
 
-Team Cornetto Heidelbeere: Leo Bürger, Noah Franke
+Team Cornetto Heidelbeere: Leo Bürger, Noah Franke, Simon Horn
+
+## Anpassungen 3er Team

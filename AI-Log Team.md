@@ -2,7 +2,7 @@
 
 Hier werden die Stellen beschrieben an denen AI unterstützt hat
 
-## Schritt 1/erstes Assignment
+## Schritt 1/erstes Assignment; gemeinsamer AI-Log
 
 Schritt 1 (Planung und Architekturentscheidungen): hier werden die unterstützenden Stellen des ersten Meilensteins angegeben.
 
@@ -85,4 +85,3 @@ Nachteilen der gewählten Lösung.
 Wir prüften die Hinweise gemeinsam und überarbeiteten die
 betroffenen Stellen. Übernommen wurden nur Aussagen, die wir
 selbst nachvollziehen und auf unser Projekt beziehen konnten.
-
