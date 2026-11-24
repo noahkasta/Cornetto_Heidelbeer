@@ -1,0 +1,8 @@
+{
+  "name": "Cornetto Heidelbeere",
+  "short_name": "Cornetto",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#fff8ea",
+  "theme_color": "#464196"
+}
