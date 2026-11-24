@@ -188,3 +188,17 @@ Daten-Caches von Simon werden dadurch nicht versehentlich gelöscht.
 Bei Tests kontrollieren wir sowohl den Cache-Inhalt als auch
 die Aktivierung des Workers.
 
+
+## 9. Icons
+
+**Datum:** 24.11.2026
+**Tool:** ChatGPT
+
+**Frage:**
+Kannst du mir bitte 2 Icons für COrnetto Heidelbeere erstellen, einmal 192 px und einmal 512 px?
+
+**KI-Antwort:**
+ausgabe der icons
+
+**Projektbezug / Verständnis:**
+/
