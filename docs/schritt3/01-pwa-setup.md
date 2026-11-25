@@ -1,6 +1,6 @@
 # PWA-Setup
 
-unsere PWA verwendet eine manuelle
+Unsere PWA verwendet eine manuelle
 Service-Worker-Registrierung. Das Nuxt-Plugin
 `app/plugins/service-worker.client.ts` registriert `public/sw.js`
 ausschließlich im Browser und außerhalb des Entwicklungsmodus.

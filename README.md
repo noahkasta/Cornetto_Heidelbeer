@@ -85,6 +85,15 @@ Die Struktur folgt ADR 02. Die Komponenten stellen nur dar, die Logik liegt in d
 - [Rendering-Strategie-ADR](docs/schritt2/01-rendering-strategie-adr.md)
 - AI-LOGs: [Leo Bürger](docs/schritt2/AI-LOG-buerger.md), [Noah Wagner](docs/schritt2/AI-LOG-wagner.md), [Simon Horn](docs/schritt2/AI-LOG-horn.md)
 
+## Dokumentation (Schritt 3: PWA und Offline)
+
+- [PWA-Setup](docs/schritt3/01-pwa-setup.md)
+- [Offline-Strategie: Konzept](docs/schritt3/02-offline-strategie-konzept.md)
+- [Entscheidungsprotokoll mit Testszenarien](docs/schritt3/03-entscheidungsprotokoll.md)
+- [Verifikations-Nachweis](docs/schritt3/04-verifikations-nachweis.md)
+
+Der Service Worker (`public/sw.js`) wird nur im Produktionsmodus registriert. Offline testen: `npm run build`, `npm run preview`, Seite einmal laden, neu laden, dann in den DevTools unter Network auf „Offline“ stellen.
+
 ## Team
 
 Team Cornetto Heidelbeere: Leo Bürger, Noah Wagner, Simon Horn
