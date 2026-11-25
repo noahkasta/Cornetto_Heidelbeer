@@ -84,5 +84,34 @@ Die Timeline hilft bei der persönlichen Tagesplanung. Eine automatische
 Konfliktlösung wäre eine zusätzliche Funktion und ist für die geforderte
 Grundfunktion des Hinzufügens, Entfernens und Speicherns nicht notwendig.
 
-## 5. weitere Fragen und Fehlerbehebungen werden im Hinblick auf die Länge dieses Dokumentes ausgelassen
+## 5. Offene Punkte für Schritt 3 finden
+
+**Datum:** 25.11.2026
+**Tool:** Claude
+
+**Frage:**
+Hi. Ich habe jetzt ein neues Assignment bekommen das ich fertig machen muss. Kannst du mir helfen das zu lösen? Wir haben die Aufgabenteilung schon erledigt... Schau aber nochmal in dei Aufgabenstellung und lies den Code den ich dir gebe und finde alles was noch fehlt.
+
+**KI-Antwort, sinngemäß:**
+Abgleich von Aufgabe und Repo. Es fehlten der Verifikations-Nachweis, die richtige Ordnerstruktur und Teile im Konzept (Stale-While-Revalidate, Worst Case). Im Protokoll stand Szenario 1 doppelt.
+
+**Projektbezug / Verständnis:**
+Liste der offenen Punkte für meinen Teil. Die Caching-Strategie von Leo und Simon haben wir unverändert gelassen.
+
+
+## 6. Abschlussprüfung
+
+**Datum:** 25.11.2026
+**Tool:** Claude
+
+**Frage:**
+Okay haben wir wirklich alles erfüllt aus dem Assignment?
+
+**KI-Antwort, sinngemäß:**
+Tabelle mit allen Anforderungen. Offen waren nur Verweise im Code auf das Konzept und das Cross-Review.
+
+**Projektbezug / Verständnis:**
+Kommentare in sw.js ergänzt. Cross-Review mit Leo und Simon vor der Abgabe.
+
+## 7. weitere Fragen und Fehlerbehebungen werden im Hinblick auf die Länge dieses Dokumentes ausgelassen
 
