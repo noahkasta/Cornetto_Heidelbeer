@@ -1,10 +1,18 @@
+// Service Worker von Cornetto Heidelbeere (Schritt 3)
+// Die Caching-Regeln setzen das Konzept in docs/schritt3/02-offline-strategie-konzept.md um:
+//   B1 App-Shell und statische Ressourcen  -> Precache + Cache First (SHELL_CACHE, ASSET_CACHE)
+//   B2 Session- und Speaker-Daten           -> Cache First für Seiten (PAGE_CACHE), Daten im Nuxt-JavaScript (ASSET_CACHE)
+//   B3 "Mein Programm"                       -> /my-program im Precache, Auswahl bleibt in localStorage
+//   B4 Offline-Fallback                      -> /offline.html für nicht gespeicherte Seiten
+// Entscheidung und Tests: docs/schritt3/03-entscheidungsprotokoll.md
+
 const CACHE_PREFIX = 'cornetto-'
 
 const SHELL_CACHE = 'cornetto-shell-v3'
 const PAGE_CACHE = 'cornetto-pages-v3'
 const ASSET_CACHE = 'cornetto-assets-v3'
 
-// App-Shell: Diese Seiten und Dateien werden bereits bei der
+// B1, B3, B4: App-Shell. Diese Seiten und Dateien werden bereits bei der
 // Installation des Service Workers gespeichert.
 const PRECACHE_URLS = [
   '/',
@@ -24,7 +32,8 @@ self.addEventListener('install', (event) => {
   )
 })
 
-// Aktivierung: Alte Cornetto-Caches entfernen.
+// Aktivierung: Alte Cornetto-Caches entfernen. Bei einer neuen App-Version
+// wird die Versionsnummer (-v3) erhöht, sonst bleibt Cache First beim alten Stand.
 self.addEventListener('activate', (event) => {
   event.waitUntil(
     caches.keys().then((names) => {
@@ -46,7 +55,7 @@ self.addEventListener('activate', (event) => {
   )
 })
 
-// Cache First: Zuerst im Cache suchen.
+// Cache First (B1): Zuerst im Cache suchen.
 // Nur wenn nichts vorhanden ist, wird das Netzwerk verwendet.
 async function cacheFirst(request, cacheName) {
   const cache = await caches.open(cacheName)
@@ -65,7 +74,10 @@ async function cacheFirst(request, cacheName) {
   return response
 }
 
-// Navigationen: Startseite, Sessions und Speaker-Seiten.
+// Navigationen (B2, B3, B4): Startseite, Sessions und Speaker-Seiten.
+// Reihenfolge: Seiten-Cache, App-Shell, Netzwerk, zuletzt offline.html.
+// Bewusste Abweichung von der ISR-Simulation aus Schritt 2: Eine einmal
+// gespeicherte Detailseite wird nicht aktualisiert (siehe Konzept, B2).
 async function handleNavigation(request) {
   const pageCache = await caches.open(PAGE_CACHE)
   const shellCache = await caches.open(SHELL_CACHE)
@@ -118,7 +130,9 @@ self.addEventListener('fetch', (event) => {
     return
   }
 
-  // Statische App-Dateien und Nuxt-Payloads.
+  // B1 und B2: statische App-Dateien und Nuxt-Payloads. Die Konferenzdaten
+  // stecken im JavaScript unter /_nuxt/ und werden hier mitgecacht.
+  // Lücke: Nur die Payload der Startseite wird erfasst (siehe Nachweis).
   const isNuxtAsset = url.pathname.startsWith('/_nuxt/')
   const isManifest = url.pathname === '/manifest.webmanifest'
   const isIcon = url.pathname.startsWith('/icons/')
