@@ -53,7 +53,7 @@ useHead({ title: session.title })
     </ul>
 
     <p class="session-detail__render-note">
-      Seite erzeugt um {{ renderedAt }} (ISR-Simulation, höchstens 60 Sekunden alt)
+      Seite erzeugt um {{ renderedAt }} (ISR-Simulation, höchstens 60 Sekunden alt, offline Version kann älter als 60 sek sein)
     </p>
   </article>
 </template>

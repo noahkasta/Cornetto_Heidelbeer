@@ -18,9 +18,9 @@ Stale-While-Revalidate: Eine gespeicherte Antwort wird direkt ausgeliefert, wäh
 
 Wir verwenden Cache First für die App-Shell, statische Ressourcen und bereits besuchte Konferenzseiten. Die Umsetzung erfolgt über einen manuellen Service Worker in `public/sw.js`. Die Ressourcen werden auf drei versionierte Caches aufgeteilt:
 
-- `cornetto-shell-v3`: Startseite, Mein Programm, Offline-Fallback, Manifest und Icons (Precache bei der Installation)
-- `cornetto-pages-v3`: erfolgreich geladene Navigationsanfragen, etwa Session-Detailseiten und Speaker-Profile
-- `cornetto-assets-v3`: Nuxt-Dateien unter `/_nuxt/` und die Payload der Startseite
+- `cornetto-shell-v4`: Startseite, Mein Programm, Offline-Fallback, Manifest und Icons (Precache bei der Installation)
+- `cornetto-pages-v4`: erfolgreich geladene Navigationsanfragen, etwa Session-Detailseiten und Speaker-Profile
+- `cornetto-assets-v4`: Nuxt-Dateien unter `/_nuxt/` und die Payload der Startseite
 
 Persönliche Session-IDs werden weiterhin in localStorage gespeichert. Die serverseitige ISR-Simulation der Session-Detailseiten bleibt bestehen.
 
@@ -44,7 +44,10 @@ Aktion: Offline-Modus aktivieren (Firefox: Datei → Offline arbeiten, Chrome: D
 
 Beobachtetes Verhalten:
 
-- Leo (Firefox, HTTP-Cache in den DevTools deaktiviert): Die Übersicht erschien mit Gestaltung und Session-Liste. Die Filter ließen sich kombinieren und änderten die Trefferliste.
+- Leo (Firefox, HTTP-Cache deaktiviert): Nach Aktivierung des
+  Service Workers und erneutem Online-Laden wurde die Startseite
+  offline neu geladen. Gestaltung und Session-Liste erschienen;
+  die Filter nach Tag, Track und Level funktionierten weiterhin
 - Simon (Chrome): Die Übersicht wurde angezeigt, die Filter funktionierten. Zusätzlich ließ sich eine zuvor online besuchte Session-Detailseite offline öffnen.
 - Noah (Chrome): Die Übersicht erschien vollständig. Mit Tag 2, Rendering & Performance und Fortgeschritten blieben 2 von 20 Sessions. Im Network-Tab schlugen dabei viele Anfragen nach `_payload.json` fehl. Nuxt lädt diese Daten für verlinkte Seiten vorab, unser Worker cacht aber nur die Payload der Startseite. Auf die Bedienung hatte das keinen Einfluss.
 
@@ -60,7 +63,10 @@ Beobachtetes Verhalten:
 
 - Simon (Chrome): Die Seite öffnete sich, alle vier zuvor hinzugefügten Sessions waren sichtbar. Die Session-IDs wurden aus localStorage gelesen.
 - Noah (Chrome): Vier gemerkte Sessions an beiden Tagen wurden angezeigt, zwei davon mit Hinweis auf einen Zeitkonflikt. Alle Dateien kamen laut Network-Tab aus dem Service Worker oder dem Speicher des Browsers.
-
+- - Leo (Firefox, HTTP-Cache deaktiviert): Nach vorherigem Online-Laden
+  ließ sich `/my-program` offline direkt öffnen. Die gespeicherten
+  Sessions wurden angezeigt. Eine Session wurde entfernt; nach
+  erneutem Laden blieb diese Änderung erhalten.
 Ergebnis: bestanden. Im automatisierten Test (siehe Nachweis) wurde auch der Hinweis auf einen Zeitkonflikt offline angezeigt, weil er im Browser berechnet wird.
 
 ### Szenario 3: Erstbesuch ohne vorheriges Online-Laden

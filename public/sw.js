@@ -8,9 +8,9 @@
 
 const CACHE_PREFIX = 'cornetto-'
 
-const SHELL_CACHE = 'cornetto-shell-v3'
-const PAGE_CACHE = 'cornetto-pages-v3'
-const ASSET_CACHE = 'cornetto-assets-v3'
+const SHELL_CACHE = 'cornetto-shell-v4'
+const PAGE_CACHE = 'cornetto-pages-v4'
+const ASSET_CACHE = 'cornetto-assets-v4'
 
 // B1, B3, B4: App-Shell. Diese Seiten und Dateien werden bereits bei der
 // Installation des Service Workers gespeichert.
@@ -116,19 +116,25 @@ self.addEventListener('fetch', (event) => {
   const url = new URL(request.url)
 
   // Nur GET-Anfragen derselben Website behandeln.
-  if (
-    request.method !== 'GET'
-    || url.origin !== self.location.origin
-  ) {
+  self.addEventListener('fetch', (event) => {
+  const request = event.request
+  const url = new URL(request.url)
+
+  // Vorab gespeicherte Ressourcen im Shell-Cache suchen.
+  if (PRECACHE_URLS.includes(url.pathname)) {
+    event.respondWith(cacheFirst(request, SHELL_CACHE))
     return
   }
 
-  // HTML-Navigationen:
-  // Session-Details, Speaker-Profile und andere Seiten.
-  if (request.mode === 'navigate') {
-    event.respondWith(handleNavigation(request))
-    return
+  // Nuxt-Dateien und Payloads aller Seiten berücksichtigen.
+  const isNuxtAsset = url.pathname.startsWith('/_nuxt/')
+  const isIcon = url.pathname.startsWith('/icons/')
+  const isPayload = url.pathname.endsWith('/_payload.json')
+
+  if (isNuxtAsset || isIcon || isPayload) {
+    event.respondWith(cacheFirst(request, ASSET_CACHE))
   }
+})
 
   // B1 und B2: statische App-Dateien und Nuxt-Payloads. Die Konferenzdaten
   // stecken im JavaScript unter /_nuxt/ und werden hier mitgecacht.

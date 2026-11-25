@@ -19,10 +19,10 @@ Team: Cornetto Heidelbeere (Leo Bürger, Simon Horn, Noah Wagner)
 Der automatisierte Durchlauf bestätigt das. Chrome meldete über die DevTools-Schnittstelle (`Page.getInstallabilityErrors`) keine Installierbarkeitsfehler. Der Worker hatte den Status `activated`, und die Seite wurde von ihm gesteuert. Im Cache lagen danach:
 
 ```
-cornetto-shell-v3:  /, /my-program, /offline.html, /manifest.webmanifest,
+cornetto-shell-v4:  /, /my-program, /offline.html, /manifest.webmanifest,
                     /icons/icon-192.png, /icons/icon-512.png
-cornetto-assets-v3: 29 Dateien unter /_nuxt/ und /_payload.json
-cornetto-pages-v3:  besuchte Navigationsseiten (z. B. /sessions/s02)
+cornetto-assets-v4: 29 Dateien unter /_nuxt/ und /_payload.json
+cornetto-pages-v4:  besuchte Navigationsseiten (z. B. /sessions/s02)
 ```
 
 ## Belege zu den Szenarien aus 03
@@ -53,4 +53,4 @@ Die Aufgabe nennt ein Lighthouse-PWA-Audit. Diese Kategorie gibt es seit Lightho
 
 Getestet wurden die drei Szenarien aus dem Protokoll, manuell in Chrome und Firefox und zusätzlich automatisiert in Chromium. Offline haben wir jeweils über den Browser hergestellt, nicht über das Abschalten des WLANs. Die Ergebnisse zeigen, dass Startseite und „Mein Programm“ nach einem ersten Online-Besuch ohne Netz funktionieren, einschließlich Filter und gespeicherter Auswahl. Damit sind die Kernfälle aus dem Konferenzalltag abgedeckt. In Szenario 1 verhielten sich Firefox und Chrome gleich. Die Installierbarkeit haben wir nur auf localhost geprüft, für eine echte Veröffentlichung ist HTTPS nötig.
 
-Es gibt drei Lücken. Erstens werden Dateien erst gecacht, nachdem der Worker aktiv ist. Wer die App nur ein einziges Mal kurz öffnet, hat womöglich nicht alle Dateien gespeichert. Zweitens zeigt eine nie besuchte Detailseite beim direkten Aufruf nur die Offline-Seite, über Links in der App ist sie trotzdem erreichbar. Drittens hält Cache First gespeicherte Seiten unbegrenzt fest. Viertens schlagen offline die Vorab-Anfragen nach `_payload.json` der Speaker-Seiten fehl, weil nur die Payload der Startseite gecacht wird. Sichtbare Folgen hatte das im Test nicht. Für eine echte Konferenz mit Raumänderungen müssten wir die Detailseiten auf Stale-While-Revalidate umstellen.
+Es gibt vier Lücken. Erstens werden Dateien erst gecacht, nachdem der Worker aktiv ist. Wer die App nur ein einziges Mal kurz öffnet, hat womöglich nicht alle Dateien gespeichert. Zweitens zeigt eine nie besuchte Detailseite beim direkten Aufruf nur die Offline-Seite, über Links in der App ist sie trotzdem erreichbar. Drittens hält Cache First gespeicherte Seiten unbegrenzt fest. Viertens schlagen offline die Vorab-Anfragen nach `_payload.json` der Speaker-Seiten fehl, weil nur die Payload der Startseite gecacht wird. Sichtbare Folgen hatte das im Test nicht. Für eine echte Konferenz mit Raumänderungen müssten wir die Detailseiten auf Stale-While-Revalidate umstellen.
