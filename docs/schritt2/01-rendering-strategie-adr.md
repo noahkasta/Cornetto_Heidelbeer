@@ -33,6 +33,8 @@ Speaker-Liste und Profile werden statisch erzeugt (SSG). In nuxt.config.ts stehe
 
 Die Seiten sind schnell und brauchen keine Server-Logik. Ändert sich eine Bio, ist ein neuer Build nötig. Das nehmen wir hin, weil es bei einer Konferenz selten vorkommt. Ein Profil enthält auch die Sessions mit dem Button für „Mein Programm“. Im statischen HTML steht dieser Button immer auf „hinzufügen“. Den echten Zustand zeigt er erst, wenn der Browser localStorage gelesen hat. Dieses kurze Umspringen akzeptieren wir.
 
+Durch den in Schritt 3 ergänzten Service Worker werden bereits besuchte Session-Detailseiten zusätzlich im Browser gecacht. Die Cache-First-Strategie kann dabei die serverseitige Aktualisierung verdecken. Für die Prüfung der ISR-Simulation muss der Service Worker deshalb vorübergehend umgangen werden.
+
 ## Punkt 2: Session-Detailseiten (/sessions/[id])
 
 Federführend: Simon, Review: Noah
@@ -108,3 +110,15 @@ Es gibt keinen Hydration-Konflikt, weil der Server nichts rendert, was der Brows
 ## Nachträge aus der Umsetzung
 
 06.11.2026: Die Rehydration lief zuerst im Hook app:mounted. Gespeicherte Programme führten dadurch auf vorgerenderten Seiten zu Hydration-Warnungen, weil Nuxt die Seite zu diesem Zeitpunkt noch nicht fertig hydriert hatte. Wir nutzen deshalb onNuxtReady. An den Entscheidungen oben ändert das nichts.
+
+25.11.2026 Nachtrag: Prüfung der ISR-Simulation 
+
+Die Session-Detailseite wurde im Produktionsmodus mit deaktiviertem Browser-Cache und umgangenem Service Worker getestet.
+
+Erster Aufruf: 14:49:30
+
+Erneuter Aufruf innerhalb von 60 Sekunden: 14:49:30
+
+Erneuter Aufruf nach Ablauf des Cache-Intervalls: 14:50:49
+
+Der zunächst unveränderte und anschließend aktualisierte Zeitstempel bestätigt das erwartete Verhalten der ISR-Simulation. Da die Konferenzdaten weiterhin statisch eingebunden sind, wurde dabei nur die erneute Seitenerzeugung und keine tatsächliche Änderung der Konferenzdaten geprüft.
